@@ -49,9 +49,9 @@ const defaultData: PortfolioData = {
     about: "Data Science student passionate about AI, DataOps, and building intelligent data pipelines.",
     contact: "kunal@example.com",
     socials: [
-      { name: "GitHub", url: "https://github.com/kunalnawariya" },
-      { name: "LinkedIn", url: "https://linkedin.com/in/kunalnawariya" },
-      { name: "Twitter", url: "https://twitter.com/kunalnawariya" }
+      { name: "GitHub", url: "https://github.com/NawariyaKunal262004" },
+      { name: "LinkedIn", url: "https://www.linkedin.com/in/kunal-nawaria-35591629a" },
+      { name: "DockerHub", url: "https://hub.docker.com/repositories/kunal262004" }
     ]
   },
   education: [
