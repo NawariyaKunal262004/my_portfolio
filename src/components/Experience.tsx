@@ -66,41 +66,44 @@ const research = [
 const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-gradient-to-br from-slate-900 to-blue-900 relative overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
         {/* Certifications */}
-        <div className="mb-20">
+        <div className="mb-20 w-full">
           <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Certifications
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="group relative"
+                className="group relative overflow-hidden rounded-3xl h-full shadow-2xl border-2 border-white/20 bg-white/10 backdrop-blur-2xl"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                <div className="relative p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center">
-                      <span className="text-white font-bold text-xl">{cert.title.charAt(0)}</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
-                        {cert.title}
-                      </h3>
-                      <p className="text-gray-300 leading-relaxed mb-2">
-                        {cert.description}
-                      </p>
-                      <div className="flex flex-col text-sm text-blue-300">
-                        <span>Issuer: {cert.issuer}</span>
-                        <span>Year: {cert.year}</span>
-                        {cert.link && (
-                          <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 mt-1">View Certificate</a>
-                        )}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                <div className="relative bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 hover:border-blue-400/30 transition-all duration-300 transform hover:scale-105 overflow-hidden min-h-[240px] h-full flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-start gap-6">
+                      <div className="relative w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center">
+                        <span className="text-white font-bold text-xl">{cert.title.charAt(0)}</span>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                          {cert.title}
+                        </h3>
+                        <p className="text-gray-300 leading-relaxed mb-2">
+                          {cert.description}
+                        </p>
+                        <div className="flex flex-col text-sm text-blue-300">
+                          <span>Issuer: {cert.issuer}</span>
+                          <span>Year: {cert.year}</span>
+                          {cert.link && (
+                            <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 mt-1">View Certificate</a>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
+                  <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-blue-400/30 transition-all duration-300"></div>
                 </div>
               </div>
             ))}
@@ -108,17 +111,15 @@ const Experience = () => {
         </div>
 
         {/* Internships Timeline */}
-        <div className="mb-20">
+        <div className="mb-20 w-full">
           <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Professional Experience
           </h2>
           <div className="max-w-4xl mx-auto">
             <div className="relative">
-              {/* Timeline Line */}
               <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
               {internships.map((internship, index) => (
                 <div key={index} className="relative flex items-start gap-8 mb-12">
-                  {/* Timeline Dot */}
                   <div className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center z-10 ${
                     internship.current 
                       ? 'bg-gradient-to-br from-green-400 to-blue-500 shadow-lg shadow-green-500/20' 
@@ -126,9 +127,8 @@ const Experience = () => {
                   }`}>
                     <div className="w-6 h-6 bg-white rounded-full"></div>
                   </div>
-                  {/* Content */}
                   <div className="flex-1 group">
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 hover:border-white/20 transition-all duration-300">
+                    <div className="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 hover:border-blue-400/30 transition-all duration-300">
                       <div className="flex items-start justify-between mb-4">
                         <div>
                           <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
@@ -154,7 +154,6 @@ const Experience = () => {
                       <p className="text-gray-300 mb-6 leading-relaxed">
                         {internship.description}
                       </p>
-                      {/* Technologies */}
                       <div className="mb-6">
                         <h4 className="text-white font-semibold mb-3">Technologies Used:</h4>
                         <div className="flex flex-wrap gap-2">
@@ -168,7 +167,6 @@ const Experience = () => {
                           ))}
                         </div>
                       </div>
-                      {/* Achievements */}
                       <div className="mb-6">
                         <h4 className="text-white font-semibold mb-3">Key Contributions:</h4>
                         <ul className="space-y-2">
@@ -192,17 +190,17 @@ const Experience = () => {
         </div>
 
         {/* Research */}
-        <div>
+        <div className="w-full">
           <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Research Projects
           </h2>
           <div className="max-w-4xl mx-auto">
             {research.map((project, index) => (
-              <div key={index} className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 hover:border-white/20 transition-all duration-300">
+              <div key={index} className="group relative mb-12 overflow-hidden rounded-3xl">
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 hover:border-blue-400/30 transition-all duration-300">
                   <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl flex items-center justify-center">
+                    <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl flex items-center justify-center">
                       <span className="text-white font-bold text-xl">{project.title.charAt(0)}</span>
                     </div>
                     <div className="flex-1">

@@ -36,11 +36,11 @@ const About = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Profile Image with Neon Ring */}
-          <div className="relative group flex justify-center items-center">
-            <div className="relative w-64 h-64 flex items-center justify-center">
+      <div className="container mx-auto px-4 relative z-10 flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center w-full max-w-3xl mx-auto">
+          {/* Profile Image Overlapping About Card */}
+          <div className="relative flex justify-center w-full -mb-20 z-20">
+            <div className="relative w-40 h-40 md:w-56 md:h-56 flex items-center justify-center">
               {/* Neon Rotating Ring */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-full h-full rounded-full border-8 border-gradient-to-r from-blue-400 via-pink-400 to-purple-400 animate-spin-slow shadow-2xl" style={{ boxShadow: '0 0 40px 10px #a78bfa, 0 0 80px 20px #f472b6' }} />
@@ -56,66 +56,51 @@ const About = () => {
             </div>
           </div>
 
-          {/* Content Card with 3D Glassmorphism */}
-          <div className="space-y-10 bg-white/10 dark:bg-gray-900/60 backdrop-blur-3xl rounded-3xl shadow-2xl p-12 md:p-16 glass border-2 border-gradient-to-r from-blue-400 via-pink-400 to-purple-400 animate-fade-in-up relative overflow-hidden">
+          {/* About/Profile Card (with top padding for overlap) */}
+          <div className="space-y-10 bg-white/10 dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl shadow-2xl p-10 md:p-12 glass border-2 border-white/20 animate-fade-in-up relative overflow-hidden flex flex-col items-center justify-center w-full mt-0 pt-24">
             {/* Animated Border Glow */}
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 opacity-50 blur-2xl animate-pulse-slow z-0" />
-            <div className="relative z-10">
-              <h2 className="text-5xl md:text-6xl font-extrabold mb-8 bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 bg-clip-text text-transparent drop-shadow-2xl animate-gradient-x inline-block relative tracking-tight">
+            <div className="relative z-10 w-full flex flex-col items-center">
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 bg-clip-text text-transparent drop-shadow-xl inline-block relative tracking-tight text-center">
                 About Me
-                {/* Animated Underline */}
-                <span className="block h-1 w-24 mt-3 mx-auto bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 rounded-full animate-gradient-x animate-pulse-slow"></span>
+                <span className="block h-1 w-20 mt-3 mx-auto bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 rounded-full animate-gradient-x animate-pulse-slow"></span>
               </h2>
-              <p className="text-gray-200 text-xl leading-relaxed mb-6 font-medium">
+              <p className="text-gray-200 text-lg leading-relaxed mb-4 font-medium text-center">
                 I'm a Data Science student passionate about Mathematics and DataOps. Since the first year of my engineering journey, I've gained hands-on experience in web scraping (Python, Oxylabs), data cleaning, and visualization, along with working knowledge of NumPy, Pandas, Scikit-learn, LangChain, Generative AI, Agentic AI, and Machine Learning.
               </p>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className="text-gray-300 text-base leading-relaxed text-center">
                 Currently, my focus is on DataOps — learning how to build reliable, automated data pipelines using tools like Apache Airflow, dbt, and CI/CD practices for data workflows. Let's connect and explore how I can contribute to your DataOps initiatives!
               </p>
+            </div>
+          </div>
 
-              {/* Social Links */}
-              <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-4 mt-6">
-                <span className="text-gray-300 text-sm md:text-base">Contact: kunal@example.com</span>
-                <div className="flex gap-3">
-                  {socials.map((social, i) => (
-                    <a
-                      key={i}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 text-lg md:text-xl"
-                    >
-                      {social.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* Skills Progress with Glow and Staggered Animation */}
-              <div className="space-y-5 relative z-10">
-                <h3 className="text-2xl md:text-3xl font-semibold text-blue-200 mb-6 tracking-wide">Technical Skills</h3>
-                {[
-                  { name: 'Python', level: 90, color: 'from-green-400 to-blue-500' },
-                  { name: 'Machine Learning', level: 85, color: 'from-purple-400 to-pink-500' },
-                  { name: 'DataOps', level: 80, color: 'from-yellow-400 to-orange-500' },
-                  { name: 'DevOps', level: 75, color: 'from-blue-400 to-purple-500' },
-                  { name: 'React', level: 80, color: 'from-cyan-400 to-blue-500' },
-                  { name: 'Docker', level: 85, color: 'from-blue-500 to-indigo-500' }
-                ].map((skill, index) => (
-                  <div key={index} className="group" style={{ animationDelay: `${index * 0.12}s`, animationFillMode: 'both' }}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-blue-100 font-medium text-lg">{skill.name}</span>
-                      <span className="text-blue-300 text-base">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-blue-900/40 rounded-full h-4 overflow-hidden shadow-inner">
-                      <div 
-                        className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out transform origin-left hover:scale-y-110 shadow-lg animate-fade-in-up animate-glow-bar`}
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
+          {/* Technical Skills Card (stacked below) */}
+          <div className="space-y-8 bg-white/10 dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl shadow-2xl p-10 md:p-12 glass border-2 border-white/20 animate-fade-in-up relative overflow-hidden flex flex-col items-center justify-center w-full mt-8">
+            {/* Animated Border Glow */}
+            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 opacity-50 blur-2xl animate-pulse-slow z-0" />
+            <div className="relative z-10 w-full flex flex-col items-center">
+              <h3 className="text-2xl md:text-3xl font-semibold text-blue-200 mb-6 tracking-wide text-center">Technical Skills</h3>
+              {[
+                { name: 'Python', level: 90, color: 'from-green-400 to-blue-500' },
+                { name: 'Machine Learning', level: 85, color: 'from-purple-400 to-pink-500' },
+                { name: 'DataOps', level: 80, color: 'from-yellow-400 to-orange-500' },
+                { name: 'DevOps', level: 75, color: 'from-blue-400 to-purple-500' },
+                { name: 'React', level: 80, color: 'from-cyan-400 to-blue-500' },
+                { name: 'Docker', level: 85, color: 'from-blue-500 to-indigo-500' }
+              ].map((skill, index) => (
+                <div key={index} className="group" style={{ animationDelay: `${index * 0.12}s`, animationFillMode: 'both' }}>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-blue-100 font-medium text-lg">{skill.name}</span>
+                    <span className="text-blue-300 text-base">{skill.level}%</span>
                   </div>
-                ))}
-              </div>
+                  <div className="w-full bg-blue-900/40 rounded-full h-4 overflow-hidden shadow-inner">
+                    <div 
+                      className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out transform origin-left hover:scale-y-110 shadow-lg animate-fade-in-up animate-glow-bar`}
+                      style={{ width: `${skill.level}%` }}
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

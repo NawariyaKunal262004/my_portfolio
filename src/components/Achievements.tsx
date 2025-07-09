@@ -63,44 +63,37 @@ const Achievements = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto overflow-hidden items-stretch">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {achievements.map((achievement, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-3xl h-full"
+              className="group relative overflow-hidden rounded-3xl h-full shadow-2xl border-2 border-white/20 bg-white/10 backdrop-blur-2xl"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {/* Glow Effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${achievement.gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500`}></div>
-              {/* Spotlight Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -skew-x-12"></div>
-              <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 p-8 hover:border-blue-400/30 transition-all duration-300 transform hover:scale-105 overflow-hidden min-h-[340px] h-full flex flex-col justify-between flex-1">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 hover:border-blue-400/30 transition-all duration-300 transform hover:scale-105 overflow-hidden min-h-[240px] h-full flex flex-col justify-between">
                 <div>
                   <div className="flex items-start gap-6">
-                    {/* Icon with Trophy Glow */}
-                    <div className="relative">
-                      <div className={`absolute inset-0 bg-gradient-to-r ${achievement.gradient} rounded-2xl blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-300`}></div>
-                      <div className={`relative w-16 h-16 bg-gradient-to-br ${achievement.gradient} rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300`}>
-                        <achievement.icon size={32} className="text-white" />
-                      </div>
+                    <div className="relative w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center">
+                      <span className="text-white font-bold text-xl">{achievement.title.charAt(0)}</span>
                     </div>
-                    {/* Content */}
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <h3 className="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors duration-300">
-                          {achievement.title}
-                        </h3>
-                        <span className={`px-3 py-1 bg-gradient-to-r ${achievement.gradient} bg-opacity-20 text-white rounded-full text-sm font-medium`}>
-                          {achievement.type}
-                        </span>
-                      </div>
-                      <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                        {achievement.title}
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed mb-2">
                         {achievement.description}
                       </p>
+                      <div className="flex flex-col text-sm text-blue-300">
+                        <span>Issuer: {achievement.issuer}</span>
+                        <span>Year: {achievement.year}</span>
+                        {achievement.link && (
+                          <a href={achievement.link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 mt-1">View Certificate</a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
-                {/* Animated Border */}
                 <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-blue-400/30 transition-all duration-300"></div>
               </div>
             </div>

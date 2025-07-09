@@ -80,12 +80,12 @@ const Projects = () => {
               key={project.id}
               className={`group relative transition-all duration-500 ${activeProject === project.id ? 'scale-105' : 'hover:scale-102'}`}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative bg-white/10 backdrop-blur-2xl rounded-3xl border-2 border-white/20 overflow-hidden shadow-2xl">
                 <div className="p-8">
                   <div className="flex items-start gap-6">
                     {/* Project Icon */}
-                    <div className={`flex-shrink-0 w-16 h-16 bg-gradient-to-br ${project.gradient} rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`flex-shrink-0 w-16 h-16 bg-gradient-to-br ${project.gradient} rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
                       <project.icon size={32} className="text-white" />
                     </div>
                     {/* Project Content */}
@@ -118,11 +118,12 @@ const Projects = () => {
                         className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-300 mb-4"
                       >
                         <span>View Details</span>
-                        <span className={`transform transition-transform duration-300 ${activeProject === project.id ? 'rotate-90' : ''}`}>▶</span>
+                        <span className={`transform transition-transform duration-300 ${activeProject === project.id ? 'rotate-90' : ''}`}>
+                        </span>
                       </button>
                       {/* Expanded Content */}
                       {activeProject === project.id && (
-                        <div className="space-y-4 p-6 bg-white/5 rounded-xl border border-white/10 animate-fade-in">
+                        <div className="space-y-4 p-6 bg-white/10 rounded-2xl border border-white/20 animate-fade-in">
                           <div>
                             <h4 className="text-lg font-semibold text-white mb-2">Impact</h4>
                             <p className="text-gray-300">{project.impact}</p>
