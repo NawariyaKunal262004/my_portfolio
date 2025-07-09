@@ -47,7 +47,7 @@ const About = () => {
               {/* Neon Rotating Ring */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-full h-full rounded-full border-8 border-gradient-to-r from-blue-400 via-pink-400 to-purple-400 animate-spin-slow shadow-2xl" style={{ boxShadow: '0 0 40px 10px #a78bfa, 0 0 80px 20px #f472b6' }} />
-              </div>
+                </div>
               <div className="relative w-full h-full bg-white/20 dark:bg-gray-900/40 backdrop-blur-2xl rounded-full p-3 border-4 border-white/30 shadow-2xl glass flex items-center justify-center">
                 <img
                   src={kunalPhoto}

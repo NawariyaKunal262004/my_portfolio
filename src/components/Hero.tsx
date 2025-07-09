@@ -34,7 +34,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Gradient Background with Glassmorphism Overlay */}
-      <div className="absolute inset-0">
+        <div className="absolute inset-0">
         <div className="w-full h-full bg-gradient-to-br from-[#4158D0] via-[#C850C0] to-[#FFCC70] animate-gradient-x"></div>
         <div className="absolute inset-0 bg-white/10 backdrop-blur-md" />
       </div>
