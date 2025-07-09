@@ -31,6 +31,7 @@ function MainApp() {
         <section id="projects">
           <Projects />
         </section>
+        
         <section id="experience">
           <Experience />
         </section>

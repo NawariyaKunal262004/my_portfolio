@@ -1,28 +1,31 @@
 import React from 'react';
-import { getPortfolioData } from '../portfolioData';
+
+const education = [
+  {
+    degree: 'B.Tech in AI & Data Science',
+    year: '3rd Year',
+    cgpa: '6.7'
+  }
+];
 
 const Education = () => {
-  const { education } = getPortfolioData();
-
   return (
-    <section id="education" className="py-16 md:py-24 bg-gradient-to-br from-gray-900 to-indigo-900 relative overflow-hidden animate-fade-in-up">
+    <section id="education" className="py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 relative overflow-hidden animate-fade-in-up">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+        <div className="max-w-2xl mx-auto bg-white/10 dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl shadow-2xl p-10 glass border-2 border-blue-400/30 animate-fade-in-up">
+          <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 bg-clip-text text-transparent drop-shadow-lg animate-gradient-x animate-fade-in-up inline-block relative">
             Education
           </h2>
-          <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto">
-            My academic background and achievements
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl md:max-w-6xl mx-auto">
-          {education.map((edu, idx) => (
-            <div key={idx} className="bg-white/10 rounded-xl p-6 shadow-lg flex flex-col items-center">
-              <span className="text-lg md:text-xl font-semibold text-white mb-2">{edu.degree}</span>
-              <span className="text-blue-300 text-sm mb-1">Year: {edu.year}</span>
-              <span className="text-blue-300 text-sm">CGPA: {edu.cgpa}</span>
+          <div className="space-y-4">
+            <div className="flex items-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
+              <span className="text-2xl font-semibold text-blue-200">B.Tech in AI & Data Science</span>
+              <span className="text-base text-blue-300 bg-blue-900/40 rounded-full px-3 py-1 ml-auto">3rd Year</span>
             </div>
-          ))}
+            <div className="flex items-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+              <span className="text-lg text-gray-200">CGPA (till 3rd semester):</span>
+              <span className="text-lg font-bold text-blue-300">6.7</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
