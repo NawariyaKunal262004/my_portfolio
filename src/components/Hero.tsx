@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Download, Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { ChevronDown, Download, Mail, Github, Linkedin, ExternalLink } from 'lucide-react';
 import resumePDF from '../Kunal Nawaria resume[1].pdf';
 
 const Hero = () => {
@@ -79,9 +79,9 @@ const Hero = () => {
         {/* Social Links */}
         <div className="flex justify-center gap-6 mb-12">
           {[
-            { icon: Github, href: 'https://github.com/kunalnawariya' },
-            { icon: Linkedin, href: 'https://linkedin.com/in/kunalnawariya' },
-            { icon: Twitter, href: 'https://twitter.com/kunalnawariya' }
+            { icon: Github, href: 'https://github.com/NawariyaKunal262004' },
+            { icon: Linkedin, href: 'https://www.linkedin.com/in/kunal-nawaria-35591629a' },
+            { icon: ExternalLink, href: 'https://hub.docker.com/repositories/kunal262004' }
           ].map(({ icon: Icon, href }, index) => (
             <a
               key={index}
@@ -96,7 +96,7 @@ const Hero = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
           <ChevronDown size={32} className="text-white/70" />
         </div>
       </div>
