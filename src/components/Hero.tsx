@@ -52,7 +52,7 @@ const Hero = () => {
             </span>
           </div>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Passionate about Mathematics and DataOps, building intelligent data pipelines and AI-driven solutions
+            Passionate about Mathematics and Data science , DevOps, building intelligent data pipelines and AI-driven solutions
           </p>
 
           {/* CTA Buttons */}
