@@ -85,11 +85,6 @@ const Achievements = () => {
                         {achievement.description}
                       </p>
                       <div className="flex flex-col text-sm text-blue-300">
-                        <span>Issuer: {achievement.issuer}</span>
-                        <span>Year: {achievement.year}</span>
-                        {achievement.link && (
-                          <a href={achievement.link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 mt-1">View Certificate</a>
-                        )}
                       </div>
                     </div>
                   </div>

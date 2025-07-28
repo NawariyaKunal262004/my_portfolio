@@ -85,9 +85,6 @@ const Experience = () => {
                 <div className="relative bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 hover:border-blue-400/30 transition-all duration-300 transform hover:scale-105 overflow-hidden min-h-[240px] h-full flex flex-col justify-between">
                   <div>
                     <div className="flex items-start gap-6">
-                      <div className="relative w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center">
-                        {cert.icon ? <cert.icon size={28} className="text-white" /> : <span className="text-white font-bold text-xl">{cert.title.charAt(0)}</span>}
-                      </div>
                       <div>
                         <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
                           {cert.title}
@@ -97,7 +94,6 @@ const Experience = () => {
                         </p>
                         <div className="flex flex-col text-sm text-blue-300">
                           <span>Issuer: {cert.issuer}</span>
-                          <span>Year: {cert.year}</span>
                           {cert.link && (
                             <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 mt-1">View Certificate</a>
                           )}
@@ -202,9 +198,6 @@ const Experience = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 hover:border-blue-400/30 transition-all duration-300">
                   <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl flex items-center justify-center">
-                      {project.icon ? <project.icon size={28} className="text-white" /> : <span className="text-white font-bold text-xl">{project.title.charAt(0)}</span>}
-                    </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-3">
                         <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
