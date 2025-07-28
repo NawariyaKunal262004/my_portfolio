@@ -75,7 +75,7 @@ const Achievements = () => {
                 <div>
                   <div className="flex items-start gap-6">
                     <div className="relative w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center">
-                      <span className="text-white font-bold text-xl">{achievement.title.charAt(0)}</span>
+                      <achievement.icon size={28} className="text-white" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">

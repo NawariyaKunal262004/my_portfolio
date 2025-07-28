@@ -88,7 +88,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="p-2 sm:p-3 bg-white/10 backdrop-blur-2xl rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110 border border-white/20 shadow-md"
               >
-                <Icon size={22} className="sm:size-24" />
+                <Icon size={22} />
               </a>
             ))}
           </div>

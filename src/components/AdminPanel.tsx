@@ -1,31 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { PortfolioData, getPortfolioData, setPortfolioData } from '../portfolioData';
-
-const ADMIN_PASSWORD = 'admin123';
-const defaultData: PortfolioData = getPortfolioData();
+import { db } from '../firebaseConfig';
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 
 const AdminPanel = () => {
-  const [password, setPassword] = useState('');
-  const [authenticated, setAuthenticated] = useState(false);
-  const [data, setData] = useState<PortfolioData>(defaultData);
+  // Remove password and authentication logic
+  const [authenticated] = useState(true);
+  const [data, setData] = useState<PortfolioData | null>(null);
+  const [loading, setLoading] = useState(false);
   const [newProject, setNewProject] = useState({ title: '', description: '', tech: '', link: '' });
 
+  // Fetch portfolio data from Firestore
   useEffect(() => {
-    const saved = localStorage.getItem('portfolioData');
-    if (saved) setData(JSON.parse(saved));
-  }, []);
-
-  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (password === ADMIN_PASSWORD) setAuthenticated(true);
-    else alert('Incorrect password');
-  };
+    if (authenticated) {
+      setLoading(true);
+      getDoc(doc(db, 'portfolio', 'main')).then((docSnap) => {
+        if (docSnap.exists()) {
+          setData(docSnap.data() as PortfolioData);
+        }
+        setLoading(false);
+      });
+    }
+  }, [authenticated]);
 
   const handleEducationChange = (field: keyof PortfolioData['education'][0], value: string) => {
+    if (!data) return;
     setData((prev) => ({ ...prev, education: [{ ...prev.education[0], [field]: value }] }));
   };
 
   const handleSkillChange = (idx: number, field: keyof PortfolioData['skills'][0], value: string | number) => {
+    if (!data) return;
     setData((prev) => {
       const skills = [...prev.skills];
       (skills[idx] as any)[field] = value;
@@ -35,19 +39,18 @@ const AdminPanel = () => {
 
   // PROJECTS CRUD
   const handleProjectChange = (idx: number, field: string, value: string) => {
-    setData((prev) => {
-      const projects = [...prev.projects];
-      (projects[idx] as any)[field] = value;
-      return { ...prev, projects };
-    });
+    if (!data) return;
+    const projects = [...data.projects];
+    (projects[idx] as any)[field] = value;
+    setData({ ...data, projects });
   };
 
   const addProject = () => {
-    if (!newProject.title.trim()) return;
-    setData((prev) => ({
-      ...prev,
+    if (!data || !newProject.title.trim()) return;
+    setData({
+      ...data,
       projects: [
-        ...prev.projects,
+        ...data.projects,
         {
           title: newProject.title,
           description: newProject.description,
@@ -55,39 +58,28 @@ const AdminPanel = () => {
           link: newProject.link
         }
       ]
-    }));
+    });
     setNewProject({ title: '', description: '', tech: '', link: '' });
   };
 
   const deleteProject = (idx: number) => {
-    setData((prev) => {
-      const projects = [...prev.projects];
-      projects.splice(idx, 1);
-      return { ...prev, projects };
-    });
+    if (!data) return;
+    const projects = [...data.projects];
+    projects.splice(idx, 1);
+    setData({ ...data, projects });
   };
 
-  const save = () => {
-    setPortfolioData(data);
+  // Save all changes to Firestore
+  const save = async () => {
+    if (!data) return;
+    setLoading(true);
+    await setDoc(doc(db, 'portfolio', 'main'), data);
+    setLoading(false);
     alert('Saved! Refresh the site to see changes.');
   };
 
-  if (!authenticated) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-900">
-        <form onSubmit={handleLogin} className="bg-white/10 p-8 rounded-xl shadow-xl">
-          <h2 className="text-2xl font-bold mb-4 text-white">Admin Login</h2>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            className="px-4 py-2 rounded w-full mb-4"
-          />
-          <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded">Login</button>
-        </form>
-      </div>
-    );
+  if (loading || !data) {
+    return <div className="min-h-screen flex items-center justify-center text-white">Loading...</div>;
   }
 
   return (

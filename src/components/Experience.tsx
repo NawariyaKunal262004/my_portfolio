@@ -6,14 +6,16 @@ const certifications = [
     description: 'Credential demonstrating foundational and practical knowledge in AI concepts, including machine learning, natural language processing, and ethical AI.',
     issuer: 'EXIN',
     year: '2024',
-    link: ''
+    link: '',
+    icon: null // No specific icon for this one
   },
   {
     title: 'AWS Certified Cloud Practitioner',
     description: 'Validates understanding of AWS Cloud fundamentals, core services, security, architecture, and billing, with exposure to global cloud deployment practices.',
     issuer: 'Amazon',
     year: '2024',
-    link: ''
+    link: '',
+    icon: null // No specific icon for this one
   }
 ];
 
@@ -84,7 +86,7 @@ const Experience = () => {
                   <div>
                     <div className="flex items-start gap-6">
                       <div className="relative w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center">
-                        <span className="text-white font-bold text-xl">{cert.title.charAt(0)}</span>
+                        {cert.icon ? <cert.icon size={28} className="text-white" /> : <span className="text-white font-bold text-xl">{cert.title.charAt(0)}</span>}
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
@@ -201,7 +203,7 @@ const Experience = () => {
                 <div className="relative bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 hover:border-blue-400/30 transition-all duration-300">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl flex items-center justify-center">
-                      <span className="text-white font-bold text-xl">{project.title.charAt(0)}</span>
+                      {project.icon ? <project.icon size={28} className="text-white" /> : <span className="text-white font-bold text-xl">{project.title.charAt(0)}</span>}
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-3">

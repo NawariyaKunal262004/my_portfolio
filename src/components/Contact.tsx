@@ -48,16 +48,18 @@ const Contact = () => {
               Kunal Nawariya
             </span>
             <div className="flex flex-col items-center gap-3 mb-8 animate-fade-in-up">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-lg animate-float">
-                <Mail className="text-white" size={24} />
+              <div className="relative flex flex-col items-center justify-center px-8 py-6 rounded-3xl shadow-xl bg-gradient-to-br from-blue-400/30 via-purple-400/30 to-pink-400/30 backdrop-blur-md border border-white/20" style={{boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.18)'}}>
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-lg animate-float mb-2">
+                  <Mail className="text-white" size={24} />
+                </div>
+                <a
+                  href="mailto:kunalnawariya26@gmail.com"
+                  className="text-blue-200 text-lg md:text-xl font-semibold select-all transition-all duration-300 hover:text-white hover:underline hover:shadow-lg text-center"
+                  style={{ textShadow: '0 0 8px #60a5fa, 0 0 16px #a78bfa' }}
+                >
+                  kunalnawariya26@gmail.com
+                </a>
               </div>
-              <a
-                href="mailto:kunalnawariya26@gmail.com"
-                className="text-blue-200 text-lg md:text-xl font-semibold select-all transition-all duration-300 hover:text-white hover:underline hover:shadow-lg hover:animate-glow-bar text-center"
-                style={{ textShadow: '0 0 8px #60a5fa, 0 0 16px #a78bfa' }}
-              >
-                kunalnawariya26@gmail.com
-              </a>
             </div>
             <div className="flex gap-6 mb-4 mt-2">
               {socials.map((social, i) => (

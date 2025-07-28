@@ -73,36 +73,6 @@ const About = () => {
               </p>
             </div>
           </div>
-
-          {/* Technical Skills Card (stacked below) */}
-          <div className="space-y-6 sm:space-y-8 bg-white/10 dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl shadow-2xl p-6 sm:p-10 md:p-12 glass border-2 border-white/20 animate-fade-in-up relative overflow-hidden flex flex-col items-center justify-center w-full mt-6 sm:mt-8">
-            {/* Animated Border Glow */}
-            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 opacity-50 blur-2xl animate-pulse-slow z-0" />
-            <div className="relative z-10 w-full flex flex-col items-center">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-blue-200 mb-4 sm:mb-6 tracking-wide text-center">Technical Skills</h3>
-              {[
-                { name: 'Python', level: 90, color: 'from-green-400 to-blue-500' },
-                { name: 'Machine Learning', level: 85, color: 'from-purple-400 to-pink-500' },
-                { name: 'DataOps', level: 80, color: 'from-yellow-400 to-orange-500' },
-                { name: 'DevOps', level: 75, color: 'from-blue-400 to-purple-500' },
-                { name: 'React', level: 80, color: 'from-cyan-400 to-blue-500' },
-                { name: 'Docker', level: 85, color: 'from-blue-500 to-indigo-500' }
-              ].map((skill, index) => (
-                <div key={index} className="group" style={{ animationDelay: `${index * 0.12}s`, animationFillMode: 'both' }}>
-                  <div className="flex justify-between items-center mb-1 sm:mb-2">
-                    <span className="text-blue-100 font-medium text-sm sm:text-lg">{skill.name}</span>
-                    <span className="text-blue-300 text-xs sm:text-base">{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-blue-900/40 rounded-full h-3 sm:h-4 overflow-hidden shadow-inner">
-                    <div 
-                      className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out transform origin-left hover:scale-y-110 shadow-lg animate-fade-in-up animate-glow-bar`}
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -10,12 +10,21 @@ const skillCategories = {
   languages: {
     title: 'Languages',
     icon: Database,
-    skills: ['Python', 'C++', 'JavaScript', 'HTML', 'CSS']
+    skills: ['Python', 'C++', 'JavaScript', 'HTML', 'CSS', 'yaml']
   },
   tools: {
     title: 'Libraries & Tools',
     icon: Wrench,
-    skills: ['NumPy', 'Pandas', 'Scikit-learn', 'TensorFlow', 'Docker', 'Kubernetes', 'Jenkins', 'Red Hat']
+    skills: [
+      'NumPy', 'Pandas', 'Scikit-learn', 'TensorFlow', 'Docker', 'Kubernetes', 'Jenkins', 'REHL9',
+      'Ansible', 'Docker Compose', 'Prometheus', 'Terraform', 'PyTorch', 'Jupyter Notebook',
+      'CLI', 'CLI Automation', 'Shell Scripting', 'Anaconda', 'VSCode', 'Hit', 'GitHub'
+    ]
+  },
+  storage: {
+    title: 'Storage & DB',
+    icon: Database,
+    skills: ['AWS Cloud', 'MongoDB']
   },
   soft: {
     title: 'Soft Skills',
@@ -34,26 +43,6 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 relative overflow-hidden">
-      {/* 3D Floating Skills Cloud */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        {floatingSkills.map((skill, index) => (
-          <div
-            key={index}
-            className="absolute animate-float-3d"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${6 + Math.random() * 4}s`,
-              opacity: 0.18
-            }}
-          >
-            <div className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white/60 text-sm font-medium border border-white/20 hover:bg-white/20 hover:text-white transition-all duration-300 transform hover:scale-110">
-              {skill}
-            </div>
-          </div>
-        ))}
-      </div>
 
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
         <div className="text-center mb-16">
