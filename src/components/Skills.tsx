@@ -18,7 +18,7 @@ const skillCategories = {
     skills: [
       'NumPy', 'Pandas', 'Scikit-learn', 'TensorFlow', 'Docker', 'Kubernetes', 'Jenkins', 'REHL9',
       'Ansible', 'Docker Compose', 'Prometheus', 'Terraform', 'PyTorch', 'Jupyter Notebook',
-      'CLI', 'CLI Automation', 'Shell Scripting', 'Anaconda', 'VSCode', 'Hit', 'GitHub'
+      'CLI', 'CLI Automation', 'Shell Scripting', 'Anaconda', 'VSCode', 'Git', 'GitHub'
     ]
   },
   storage: {
