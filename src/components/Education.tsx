@@ -22,7 +22,7 @@ const Education = () => {
               <span className="text-base text-blue-300 bg-blue-900/40 rounded-full px-3 py-1 ml-auto">3rd Year</span>
             </div>
             <div className="flex items-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
-              <span className="text-lg text-gray-200">CGPA (till 3rd semester):</span>
+              <span className="text-lg text-gray-200">CGPA (till 4th semester):</span>
               <span className="text-lg font-bold text-blue-300">6.7</span>
             </div>
           </div>
