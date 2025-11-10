@@ -85,6 +85,12 @@ const defaultData: PortfolioData = {
       year: "2024",
       link: "https://mylogin.exin.nl/polarserver.asp?Script=GetLinkedInPost&CandidateCertificateGUID=C541C945-386B-492D-A2FE-41295AE76B96&ts=259646250"
     }
+     {
+      title: "Specialization in Redaht certified  cloud native developement with openhift and kubernates",
+      issuer: "Redhat in association with coursera",
+      year: "september 2025",
+      link: "https://coursera.org/share/8f432ebf22e29a54879c0238657a0d65"
+    }
     // Add more certifications as needed
   ]
 };
