@@ -83,7 +83,7 @@ const defaultData: PortfolioData = {
       title: "EXIN Certified in Artificial Intelligence",
       issuer: "EXIN",
       year: "2024",
-      link: ""
+      link: "https://mylogin.exin.nl/polarserver.asp?Script=GetLinkedInPost&CandidateCertificateGUID=C541C945-386B-492D-A2FE-41295AE76B96&ts=259646250"
     }
     // Add more certifications as needed
   ]
